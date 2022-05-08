@@ -37,9 +37,7 @@ public class problem2577 {
         }
         for (int n = 0;n <= 9; n++){
             bw.write(arr1[n] + "\n");
+            bw.flush();
         }
-        bf.close();
-        bw.flush();
-        bw.close();
     }
 }
