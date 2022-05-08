@@ -2,7 +2,7 @@ package 문자열;
 
 import java.io.*;
 
-public class u {
+public class problem11654 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         char a = bf.readLine().charAt(0);
