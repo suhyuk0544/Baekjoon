@@ -27,8 +27,8 @@ public class problem1065 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = num(i +1);
         }
-        for (int j = 0; j < arr.length; j++) {
-            if (!arr[j]){
+        for (boolean b : arr) {
+            if (!b) {
                 result += 1;
             }
         }
