@@ -18,6 +18,9 @@ public class problem1316 {
         System.out.println(num);
     }
     static boolean solution(String str) {
+        if (str.length() == 1){
+            return true;
+        }
         String result = "";
         char u = 0;
         for (int i = 0; i < str.length(); i++) {
