@@ -17,7 +17,7 @@ public class problem1978 {
                 if (a == 1) {
                     num--;
                 }else if (a % 2 != 0) {
-                    for (int j = 3; j <= 7; j += 2) {
+                    for (int j = 3; j <= Math.sqrt(1000); j++) {
                         if (a != j) {
                             if (a % j == 0) {
                                 num--;
