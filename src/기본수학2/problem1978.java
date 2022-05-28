@@ -31,6 +31,5 @@ public class problem1978 {
             }
         }
         System.out.println(num);
-        System.out.println(63 % 3);
     }
 }

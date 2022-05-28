@@ -9,6 +9,7 @@ public class problem1929 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(bf.readLine());
         int min = Integer.parseInt(st.nextToken()),max = Integer.parseInt(st.nextToken());
+        int num = 0;
         for (int i = min; i <= max; i++) {
             boolean booleans = false;
             if (i % 2 == 0 || i < 2) {

@@ -13,7 +13,6 @@ public class problem24723 {
 
         double result = Math.pow(2,n);
 
-
         System.out.println(Math.round(result));
     }
 }
