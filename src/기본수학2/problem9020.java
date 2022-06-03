@@ -11,7 +11,7 @@ public class problem9020 {
             int x = Integer.parseInt(bf.readLine());
             int f = x / 2,s = x / 2;
             while (true){
-                if (!selectfalse(f) && !selectfalse(s)){
+                if (select(f) && select(s)){
                     bw.write(f +" "+ s+"\n");
                     break;
                 }
@@ -21,17 +21,17 @@ public class problem9020 {
         }
         bw.flush();
     }
-    static boolean selectfalse(int n) {
-        boolean booleans = false;
+    static boolean select(int n) {
+        boolean booleans = true;
         if (n == 2){
-            return false;
+            return true;
         }else if (n % 2 == 0 || n < 2) {
-            booleans = true;
+            booleans = false;
         }else {
             for (int j = 2; j <= Math.sqrt(10000); j++) {
                 if (n != j) {
                     if (n % j == 0) {
-                        booleans = true;
+                        booleans = false;
                         break;
                     }
                 }
