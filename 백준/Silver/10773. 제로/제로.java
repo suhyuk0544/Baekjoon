@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -8,20 +9,15 @@ public class Main {
         if (n == 1){
             System.out.println(Integer.parseInt(bf.readLine()));
         }else {
-            int[] ints = new int[n];
+            LinkedList<Integer> ints = new LinkedList<Integer>();
             int sum = 0;
             for (int i = 0; i < n; i++) {
                 int num = Integer.parseInt(bf.readLine());
                 if (num != 0) {
-                    ints[i] = num;
+                    ints.add(num);
                 }
                 if (num == 0) {
-                    for (int j = ints.length - 1; j > -1; j--) {
-                        if (ints[j] != 0){
-                            ints[j] = 0;
-                            break;
-                        }
-                    }
+                    ints.remove(ints.size()-1);
                 }
             }
             for (int i:ints) {
