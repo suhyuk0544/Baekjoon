@@ -18,9 +18,9 @@ public class Main {
         }
         ints = arr.clone();
         Arrays.sort(arr);
-        for (int j = 0; j < arr.length; j++) {
-            if (!hashMap.containsKey(arr[j])) {
-                hashMap.put(arr[j],count++);
+        for (int i : arr) {
+            if (!hashMap.containsKey(i)) {
+                hashMap.put(i, count++);
             }
         }
         for (int anInt : ints) {
