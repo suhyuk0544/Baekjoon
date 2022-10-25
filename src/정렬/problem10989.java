@@ -1,6 +1,7 @@
 package 정렬;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class problem10989{
     public static void main(String[] args) throws IOException {
@@ -17,6 +18,7 @@ public class problem10989{
         for (int j = 1; j < count.length; j++) {
             count[j] += count[j-1];
         }
+        System.out.println(Arrays.toString(count));
         for (int k = n-1; k > -1; k--) {
             if (count[arr[k]] != 0) {
                 count[arr[k]]--;
