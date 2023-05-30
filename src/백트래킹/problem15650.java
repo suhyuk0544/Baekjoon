@@ -1,7 +1,7 @@
 package 백트래킹;
 
 import java.io.*;
-import java.util.Map;
+
 import java.util.StringTokenizer;
 
 public class problem15650 {
@@ -20,26 +20,28 @@ public class problem15650 {
 
     static int M = Integer.parseInt(stringTokenizer.nextToken());
 
-    static Boolean[] booleans = new Boolean[M];
+    static boolean[] booleans = new boolean[M];
 
     public static void main(String[] args) throws IOException {
         for (int i = 1; i <= M; i++) {
             bw.write(i);
             select(i);
         }
+
+        bw.flush();
+        bf.close();
+        bw.close();
     }
 
     public static void select(int num) throws IOException {
-        if (num >= M){
+        if (num >= M)
             return;
-        }
 
         for (int i = 1;i < M; i++){
             if (!booleans[i] || i != num)
                 bw.write(i + " ");
         }
-
+        bw.write("\n");
         select(num + 1);
     }
-
 }
