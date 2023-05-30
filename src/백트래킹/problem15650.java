@@ -1,38 +1,45 @@
 package 백트래킹;
 
 import java.io.*;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class problem15650 {
-    static int n,m;
+    static BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static boolean[] visited;
-    static int[] arr;
-    public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        visited = new boolean[n + 1];
-        arr = new int[m + 1];
-        select(0);
-        bw.flush();
-        bw.close();
+
+    static StringTokenizer stringTokenizer;
+
+    static {
+        try {
+            stringTokenizer = new StringTokenizer(bf.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-    public static void select(int l) throws IOException{
-        if (l == n){
-            for (int i = 0; i < m; i++) {
-                bw.write(arr[i] + " ");
-            }
-            bw.write("\n");
+
+    static int M = Integer.parseInt(stringTokenizer.nextToken());
+
+    static Boolean[] booleans = new Boolean[M];
+
+    public static void main(String[] args) throws IOException {
+        for (int i = 1; i <= M; i++) {
+            bw.write(i);
+            select(i);
+        }
+    }
+
+    public static void select(int num) throws IOException {
+        if (num >= M){
             return;
         }
-        for (int i = 1; i < n; i++) {
-            if (!visited[i]) {
-                arr[l] = i;
-                visited[i] = true;
-                select(l + 1);
-            }
+
+        for (int i = 1;i < M; i++){
+            if (!booleans[i] || i != num)
+                bw.write(i + " ");
         }
+
+        select(num + 1);
     }
+
 }
