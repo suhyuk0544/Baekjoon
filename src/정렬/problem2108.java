@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class problem2108 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(bf.readLine());
         int[] arr = new int[n];
         int[] count = new int[8001];
@@ -18,10 +19,13 @@ public class problem2108 {
             count[arr[i] + 4000]++;
         }
         Arrays.sort(arr);
-        System.out.println((int) Math.round((double) sum / n));
-        System.out.println(arr[n / 2]);
-        System.out.println(mode(count));
-        System.out.println(arr[n-1] - arr[0]);
+        bw.write((int) Math.round((double) sum / n) + "\n");
+        bw.write(arr[n / 2] + "\n");
+        bw.write(mode(count) + "\n");
+        bw.write(arr[n-1] - arr[0] + "\n");
+        bw.flush();
+        bf.close();
+        bw.close();
     }
     static int mode(int[] count){
         int max = 0;
